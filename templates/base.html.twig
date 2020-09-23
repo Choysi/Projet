@@ -10,8 +10,8 @@
 			<!-- UIkit CSS -->
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.3/dist/css/uikit.min.css"/>
 			<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300&display=swap" rel="stylesheet">
-			<link
-			href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap&family=Permanent+Marker" rel="stylesheet">
 			{# asset() fait référence au dossier 'public' du projet #}
 
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
@@ -20,29 +20,31 @@
 
 	</head>
 	<body>
-		<section>
-			<div class="uk-position-relative">
+		<section id="menu">
+			<div class="">
 				<div class="">
-					<nav class="uk-navbar-container uk-navbar-transparent " uk-navbar>
+					<nav class="uk-navbar-container uk-navbar-transparent uk-flex uk-flex-between" uk-navbar>
+						<div class="uk-navbar-left"></div>
+						{# Menu #}
 						<div class="uk-navbar-center">
 							<ul class="uk-navbar-nav">
 								<a href="{{path('home')}}">
 									<figure><img class="logo" src="{{ asset('uploads/images/AssetTemplate/Hanko_Logo.jpg') }}" alt="Logo"></figure>
 								</a>
-								<li class="uk">
-									<a class="tableauBois" href="#galerie">Yôkai</a>
+								<li id="uk-navbar">
+									<a class="" href="#galerie">Yôkai</a>
 								</li>
 								<li>
-									<a class="tableauBois" href="#livre">Livres</a>
+									<a class="" href="#livre">Livres</a>
 								</li>
 								<li>
-									<a class="tableauBois" href="{{path('décors')}}">Décors</a>
+									<a class="" href="{{path('décors')}}">Décors</a>
 								</li>
 								<li>
-									<a class="tableauBois" href="{{path('cosplay')}}">Cosplay</a>
+									<a class="" href="{{path('cosplay')}}">Cosplay</a>
 								</li>
 								<li>
-									<a class="tableauBois" href="#">Divers</a>
+									<a class="" href="#">Divers</a>
 									<div class="uk-navbar-dropdown">
 										<ul class="uk-nav uk-navbar-dropdown-nav">
 											<li class="uk-active">
@@ -71,6 +73,20 @@
 									</div>
 								</li>
 							</ul>
+						</div>
+						{# Bloc connexion #}
+						<div id="bienvenue" class="uk-flex uk-navbar-right">
+							<div class='bienvenue'>	
+								{% if app.user %}
+
+									<a class="uk-button uk-button-secondary uk-button-small" type="submit" href="{{ path('app_logout') }}">Se déconnecter</a>
+								{% else %}
+
+									<a class="uk-button uk-button-secondary uk-button-small" type="submit" href="{{ path('app_login') }}">
+										Se connecter
+									</a>
+								{% endif %}
+							</div>
 						</div>
 					</nav>
 				</div>

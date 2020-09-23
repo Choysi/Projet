@@ -2,6 +2,19 @@ body {
     padding: 5em;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.uk-navbar {
+    position: relative;
+}
+
+#menu {
+    margin: auto;
+    max-width: 1280px;
+}
+
 .miyajima {
     justify-content: center;
     display: flex;
@@ -16,7 +29,7 @@ body {
 }
 
 .logo {
-    height: 100px;
+    height: 75px;
 }
 
 .figure {
@@ -33,6 +46,20 @@ body {
     height: 700px;
 }
 
+#banniere2 {
+    position: absolute;
+}
+
+.connection {
+    font-family: 'Amatic SC', cursive;
+    font-size: 4em;
+}
+
+.inscription {
+    font-family: 'Amatic SC', cursive;
+    font-size: 4em;
+}
+
 .bienvenue h1 {
     top: 150px;
     left: 50px;
@@ -44,8 +71,45 @@ body {
     top: 150px;
 }
 
+.uk-navbar-nav>li>a {
+    font-family: 'Amatic SC', cursive;
+    font-size: 2em;
+}
+
+.uk-h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 5em;
+}
+
+#sylvain {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    color: #333;
+    font-weight: 500;
+    margin: 20px 0 0 0;
+}
+
+#auteur {
+    margin-top: 0;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    font-size: large;
+}
+
 .uk-card img.vignette-product {
     height: 128px;
     width: 128px;
     object-fit: cover;
+}
+
+.uk-card-title {
+    font-size: 6em;
+    line-height: 1.4;
+    font-family: 'Amatic SC', cursive;
+}
+
+#text-presentation {
+    text-align: justify;
+    margin: 20px;
 }
