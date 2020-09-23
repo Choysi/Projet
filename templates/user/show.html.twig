@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Membre
+{% endblock %}
+
+{% block body %}
+
+
+	<h1>{{ user }}</h1>
+	<p>
+		<a href="{{ path('users_list') }}">Retour à la liste des membres</a>
+	</p>
+	<p>
+		Enregistré depuis le :
+		{{ user.registerdate | date('d/m/Y') }}
+		<br>
+
+		Email :
+		{{ user.email }}
+	</p>
+{% endblock %}

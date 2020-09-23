@@ -1,0 +1,51 @@
+body {
+    padding: 5em;
+}
+
+.miyajima {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    height: 500px;
+    width: 500px;
+}
+
+.pseudo {
+    font-family: 'Amatic SC', cursive;
+    font-size: xx-large;
+}
+
+.logo {
+    height: 100px;
+}
+
+.figure {
+    margin: 0;
+}
+
+.tableauBois {
+    background-image: url('uploads/images/AssetTemplate/tableau bois.png') cover/center no-repeat;
+    height: 200px;
+    width: 200px;
+}
+
+.val-height-large {
+    height: 700px;
+}
+
+.bienvenue h1 {
+    top: 150px;
+    left: 50px;
+    font-family: 'Amatic SC', cursive;
+}
+
+.ete {
+    position: relative;
+    top: 150px;
+}
+
+.uk-card img.vignette-product {
+    height: 128px;
+    width: 128px;
+    object-fit: cover;
+}

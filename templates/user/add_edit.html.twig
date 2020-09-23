@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des membres
+{% endblock %}
+
+{% block body %}
+
+	{% if is_granted('ROLE_ADMIN') %}
+		{% if editMode %}
+			<h1>Modification d'un membre</h1>
+		{% else %}
+			<h1>Ajout d'un membre</h1>
+			<a class="uk-button uk-button-secondary uk-button-small" href="{{ path('users_list') }}">Retour à la liste des membres</a>
+		{% endif %}
+	{% endif %}
+
+	{{ form(formUser) }}{% endblock %}

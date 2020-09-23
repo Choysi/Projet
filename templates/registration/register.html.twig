@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription
+{% endblock %}
+
+{% block body %}
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
+	<center>
+		{{ form_start(registrationForm) }}
+		{# Titre formulaire #}
+		<h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
+		{# Prénom #}
+		<div class="uk-margin">
+			<div class="uk-inline">
+				<span class="uk-form-icon" uk-icon="icon: user"></span>
+				{{ form_widget(registrationForm.pseudo, {'attr': {'class': 'uk-input', 'placeholder': "Pseudo"}}) }}
+			</div>
+		</div>
+		{# Email #}
+		<div class="uk-margin">
+			<div class="uk-inline">
+				<span class="uk-form-icon" uk-icon="icon: mail"></span>
+				{{ form_widget(registrationForm.email, {'attr': {'class': 'uk-input', 'placeholder': "E-mail"}}) }}
+			</div>
+		</div>
+		{# Mot de passe #}
+		<div class="uk-margin">
+			<div class="uk-inline">
+				<span class="uk-form-icon" uk-icon="icon: lock"></span>
+				{{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'uk-input', 'placeholder': "Mot de passe"}}) }}
+			</div>
+		</div>
+		{# Répétition mot de passe #}
+		<div class="uk-margin">
+			<div class="uk-inline">
+				<span class="uk-form-icon" uk-icon="icon: lock"></span>
+				{{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'uk-input', 'placeholder': "Confirmez"}}) }}
+			</div>
+		</div>
+		<div class="uk-margin">
+			<div class="uk-inline">
+				{{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'uk-checkbox'}}) }}
+				{{ form_label(registrationForm.agreeTerms) }}
+			</div>
+		</div>
+		{# CSRF #}
+		<input
+		type="hidden" name="_csrf_token" value="{{ csrf_token('register') }}">
+		{# Validation #}
+		<button class="uk-button uk-button-secondary uk-button-small" type="submit">Valider</button>
+		<p class="form-link">
+			Déjà inscrit(e) ?<br>
+			<a href="{{ path('app_login') }}">Connectez-vous !</a>
+		</p>
+		{{ form_end(registrationForm) }}
+	</center>
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue
+{% endblock %}
+
+{% block body %}
+	<section id="bienvenue">
+		<div class='bienvenue'>
+			<div>
+				<h1>Bienvenue !</h1>
+				{% if app.user %}
+					<div class="pseudo">{{app.user.pseudo}}</div>
+				{% endif %}
+			</div>
+			{% if app.user %}
+
+				<a class="uk-button uk-button-secondary uk-button-small" type="submit" href="{{ path('app_logout') }}">Se déconnecter</a>
+			{% else %}
+
+				<a class="uk-button uk-button-secondary uk-button-small" type="submit" href="{{ path('app_login') }}">
+					Se connecter
+				</a>
+			{% endif %}
+		</div>
+		<div id="banniere-title" class="uk-flex uk-flex-center uk-flex-middle">
+			<h1 id="author-title">
+				Sylvain Jolivalt - Auteur - Illustrateur
+			</h1>
+		</div>
+	</section>
+
+	<div id="banniere">
+		<img src="{{ asset('uploads/images/AssetTemplate/ete.png') }}"/>
+	</div>
+	<center>
+		<div class="uk-card uk-card-default uk-width-4-5@m">
+			<div class="uk-card-header">
+				<div class="uk-grid-small uk-flex-middle" uk-grid>
+					<div class="uk-width-auto">
+						<img class="uk-border-circle" width="256" height="256" src="{{ asset('uploads/images/Portrait.jpg') }}">
+					</div>
+					<div class="uk-width-expand">
+						<h1 class="uk-card-title uk-margin-remove-bottom">Présentation</h1>
+					</div>
+				</div>
+			</div>
+			<div id="text-presentation">
+				<p>Je suis né en 1970 à Strasbourg. Passionné de bandes-dessinées et plus encore de comics depuis mes sept ans, je me suis mis très tôt au dessin pour pouvoir reproduire mes mes personnages préférés, mais aussi créer les miens. Puis vint l’intérêt pour les mythologies qui permettait de parler de personnages aux pouvoirs surnaturels tout en passant pour un enfant sérieux. Puis je me découvris une passion pour le Japon en lisant la BD Serval, parue en 1984, de Chris Claremont et Frank Miller, dans lequel j’apprends que mon X-Man préféré a vécu au Japon, parle japonais couramment, et combat des ninja. Puis, mon intérêt pour le Japon médiéval se révéla par le biais des BD Kogaratsu, de Bosse et Michetz. Puis vint le jeu de rôle qui occupa une grande partie de mon temps. En étudiant le japonais, j’accédais à tout un univers à peine effleuré par les publications françaises : les yôkai, les créatures fantastiques des contes et légendes. Après deux voyages au Japon et fort de bagages remplis de nombreux ouvrages en japonais sur le sujet, je me décidais à écrire un bestiaire fabuleux dans lequel je présente ces créatures. Cette publication m’a permis d’être invité en de nombreuses occasions par des conventions, mais aussi par des bibliothèques et universités pour animer des conférences sur le sujet.
+				Je fais actuellement partie de l’association qui organise principalement les conventions Japan Addict. J’y apporte mes notions sur la culture traditionnelle japonaise, mais aussi mes techniques de création artistique, surtout pour l’élaboration de décors et d’accessoires, et aussi l’animation d’ateliers créatifs.
+				</p>
+			</div>
+			<img class="uk-border" width="512" height="512" src="{{ asset('uploads/images/Portrait2.jpg') }}">
+		</center>
+		<hr class="uk-divider-icon">
+		<section id="galerie">
+			<div class="uk-container">
+				<center>
+					<div class="uk-h1">Galerie</div>
+					<div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: scale">
+						<div>
+							<a class="uk-inline" href="{{ asset('uploads/images/Yokai/petitmanekikitsune.jpg') }}" data-caption="Petit Manekikitsune">
+								<img src="{{ asset('uploads/images/Yokai/petitmanekikitsune.jpg') }}" alt="">
+							</a>
+						</div>
+						<div>
+							<a class="uk-inline" href="{{ asset('uploads/images/Divers/DrinkDraw6.jpg') }}" data-caption="Drink and Draw">
+								<img src="{{ asset('uploads/images/Divers/DrinkDraw6.jpg') }}" alt="">
+							</a>
+						</div>
+						<div>
+							<a class="uk-inline" href="{{ asset('uploads/images/Cosplay/Cosplay Hellboy2.jpg') }}" data-caption="Cosplay Hellboy">
+								<img src="{{ asset('uploads/images/Cosplay/Cosplay Hellboy2.jpg') }}" alt="">
+							</a>
+						</div>
+						<div>
+							<a class="uk-inline" href="{{ asset('uploads/images/Yokai/Yomi-maruLeGarçondesEnfers.jpg') }}" data-caption="Yomi-maru Le Garçon des Enfers">
+								<img src="{{ asset('uploads/images/Yokai/Yomi-maruLeGarçondesEnfers.jpg') }}" alt="">
+							</a>
+						</div>
+						<div>
+							<a class="uk-inline" href="{{ asset('uploads/images/Yokai/Dragon6.jpg') }}" data-caption="Dragon">
+								<img src="{{ asset('uploads/images/Yokai/Dragon6.jpg') }}" alt="">
+							</a>
+						</div>
+						<div>
+							<a class="uk-inline" href="{{ asset('uploads/images/Cosplay/CosplaySteampunk.jpg') }}" data-caption="Cosplay Steampunk">
+								<img src="{{ asset('uploads/images/Cosplay/CosplaySteampunk.jpg') }}" alt="">
+							</a>
+						</div>
+					</div>
+				</center>
+			</div>
+		</section>
+		<hr class="uk-divider-icon">
+		<section id="livre">
+			<center>
+				<div class="uk-h1">Livres</div>
+			</center>
+		</section>
+		<a href="#" uk-totop uk-scroll>Haut de page</a>
+	{% endblock %}
+

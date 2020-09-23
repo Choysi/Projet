@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les oeuvres
+{% endblock %}
+
+{% block body %}
+	<div class="bg-light p-3">
+		<h1>Les oeuvres</h1>
+	</div>
+
+	<div class="uk-flex">
+		{% for product in products %}
+			{% if product.enabled %}
+				<div class="uk-grid-match uk-child-width-expand@s uk-text-center">
+					<div class="uk-card uk-card-default uk-card-body">
+						<img class="vignette-product" width="128" height="128" src="{{ vich_uploader_asset(product,'imageFile') }}" alt="Image de {{ product.title }}">
+						{{product.title ~ " - " ~ product.price}}
+						€
+						<div class="uk-inline">
+							<a href="{{ path('cart_add', {'id': product.id}) }}" class="uk-button uk-button-text">
+								<i class="uk-icon" uk-icon="icon: cart"></i>Ajouter</a>
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endblock %}

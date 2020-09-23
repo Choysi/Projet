@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!
+{% endblock %}
+
+{% block body %}
+	<div class="bg-light p-3">
+		<h1>Votre panier</h1>
+	</div>
+
+	{% if items | length > 0 %}
+		<table class="uk-table uk-table-striped">
+			<thead>
+				<tr>
+					<th>Produit</th>
+					<th>Visuel</th>
+					<th>Prix</th>
+					<th>Quantité</th>
+					<th>Total</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in items %}
+					<tr>
+						<td>{{item.product.title}}</td>
+						<td><img class="img-fluid rounded" width="128" height="128" src="{{ vich_uploader_asset(item.product,'imageFile') }}" alt="Image de {{ item.product.title }}"></td>
+						<td>{{item.product.price}}
+							€</td>
+						<td>{{item.quantity}}</td>
+						<td>{{item.product.price * item.quantity}}
+							€</td>
+						<td>
+							<a href="{{ path('cart_remove', {'id': item.product.id})}}" class="btn btn-danger btn-sm">
+								<i class="uk-icon-button" uk-icon="icon: trash"></i>
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3" class="text-right">Total :
+					</td>
+					<td>{{ total }}
+						€</td>
+					<td></td>
+				</tr>
+			</tfoot>
+		</table>
+	{% else %}
+		<p>Votre panier est vide</p>
+	{% endif %}
+
+{% endblock %}

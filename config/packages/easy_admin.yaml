@@ -1,0 +1,21 @@
+easy_admin:
+  entities:
+    # List the entity class name you want to manage
+    Product:
+      class: src\Entity\Product
+      form:
+        fields:
+          - {
+              property: "CategorieOeuvre",
+              type: "easyadmin_autocomplete",
+              type_options:
+                {
+                  class: 'src\Entity\CategorieOeuvre',
+                  required: true,
+                  multiple: false,
+                },
+            }
+    User:
+      class: src\Entity\User
+      list:
+        item_permission: "ROLE_ADMIN"

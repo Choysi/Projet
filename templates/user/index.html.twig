@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des membres
+{% endblock %}
+
+{% block body %}
+
+
+	<h1>Liste des membres</h1>
+
+	{# <p>
+			<a class ="uk-button uk-button-secondary uk-button-small" href="{{ path('user_add') }}">Ajouter un membre</a>
+		</p> #}
+
+	<table class="uk-table uk-table-striped">
+		<thead>
+			<tr>
+				<th>PSEUDO</th>
+				<th>EMAIL</th>
+				<th>DATE D'INSCRIPTION</th>
+				{% if is_granted('ROLE_ADMIN') %}
+				<th>MODIFIER</th>
+				<th>SUPPRIMER</th>
+				{% endif %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+				<tr>
+					<td>
+						<a href="{{ path('user_show', {id: user.id}) }}">{{ user }}</a>
+					</td>
+					<td>{{ user.email }}</td>
+					<td>{{ user.registerdate | date('d/m/Y') }}</td>
+					{% if is_granted('ROLE_ADMIN') %}
+						<td>
+							<a href="{{ path('user_edit', {id: user.id}) }}">Modifier</a>
+						</td>
+						<td>
+							<a href="{{ path('user_delete', {id: user.id}) }}">Supprimer</a>
+						</td>
+					{% endif %}
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{{ form_start(form, {'action': path('comment_new', {'slug': article.slug}), 'attr': {'id': 'comment-form'} }) }}
+{{ form_errors(form) }}
+<article class="media">
+    <figure class="media-left">
+        <p class="image is-64x64">
+            <img src="{{ asset('uploads/images/SylvainJolivalt.jpg') }}">
+        </p>
+    </figure>
+    <div class="media-content">
+
+        <div class="uk-inline">
+            {{ form_label(form.content, 'Commentez'|trans, {'label_attr': {'class': 'label'}}) }}
+            <p class="control">
+                {{ form_widget(form.content, {'attr': {'class': 'uk-input', 'placeholder': 'Commentez...'|trans}}) }}
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                {{ form_rest(form) }}
+                <button type="submit" class="uk-button uk-button-secondary uk-button-small">{{ 'Créer un commentaire'|trans }}</button>
+            </p>
+        </div>
+    </div>
+</article>
+{{ form_end(form) }}

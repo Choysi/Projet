@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des oeuvres
+{% endblock %}
+
+{% block body %}
+
+
+	{% if editMode %}
+		<h1>Modification d'une oeuvre</h1>
+	{% else %}
+		<h1>Ajout d'une oeuvre</h1>
+		<a href="{{ path('product_list') }}">Retour à la liste des oeuvres</a>
+	{% endif %}
+	
+
+	{{ form(formUser) }}{% endblock %}
