@@ -7,53 +7,56 @@
 	{% for flashError in app.flashes('verify_email_error') %}
 		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 	{% endfor %}
-	<center>
-		{{ form_start(registrationForm) }}
-		{# Titre formulaire #}
-		<h1 class="inscription">Inscription</h1>
-		{# Prénom #}
-		<div class="uk-margin">
-			<div class="uk-inline">
-				<span class="uk-form-icon" uk-icon="icon: user"></span>
-				{{ form_widget(registrationForm.pseudo, {'attr': {'class': 'uk-input', 'placeholder': "Pseudo"}}) }}
+	<div id="register-form">
+		<center>
+			{{ form_start(registrationForm) }}
+			{# Titre formulaire #}
+			<h1 class="inscription">Inscription</h1>
+			{# Prénom #}
+			<div class="uk-margin">
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: user"></span>
+					{{ form_widget(registrationForm.pseudo, {'attr': {'class': 'uk-input', 'placeholder': "Pseudo"}}) }}
+				</div>
 			</div>
-		</div>
-		{# Email #}
-		<div class="uk-margin">
-			<div class="uk-inline">
-				<span class="uk-form-icon" uk-icon="icon: mail"></span>
-				{{ form_widget(registrationForm.email, {'attr': {'class': 'uk-input', 'placeholder': "E-mail"}}) }}
+			{# Email #}
+			<div class="uk-margin">
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: mail"></span>
+					{{ form_widget(registrationForm.email, {'attr': {'class': 'uk-input', 'placeholder': "E-mail"}}) }}
+				</div>
 			</div>
-		</div>
-		{# Mot de passe #}
-		<div class="uk-margin">
-			<div class="uk-inline">
-				<span class="uk-form-icon" uk-icon="icon: lock"></span>
-				{{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'uk-input', 'placeholder': "Mot de passe"}}) }}
+			{# Mot de passe #}
+			<div class="uk-margin">
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: lock"></span>
+					{{ form_widget(registrationForm.plainPassword.first, {'attr': {'class': 'uk-input', 'placeholder': "Mot de passe"}}) }}
+				</div>
 			</div>
-		</div>
-		{# Répétition mot de passe #}
-		<div class="uk-margin">
-			<div class="uk-inline">
-				<span class="uk-form-icon" uk-icon="icon: lock"></span>
-				{{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'uk-input', 'placeholder': "Confirmez"}}) }}
+			{# Répétition mot de passe #}
+			<div class="uk-margin">
+				<div class="uk-inline">
+					<span class="uk-form-icon" uk-icon="icon: lock"></span>
+					{{ form_widget(registrationForm.plainPassword.second, {'attr': {'class': 'uk-input', 'placeholder': "Confirmez"}}) }}
+				</div>
 			</div>
-		</div>
-		<div class="uk-margin">
-			<div class="uk-inline">
-				{{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'uk-checkbox'}}) }}
-				{{ form_label(registrationForm.agreeTerms) }}
+			<div class="uk-margin">
+				<div class="uk-inline">
+					{{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'uk-checkbox'}}) }}
+					{{ form_label(registrationForm.agreeTerms) }}
+				</div>
 			</div>
-		</div>
-		{# CSRF #}
-		<input
-		type="hidden" name="_csrf_token" value="{{ csrf_token('register') }}">
-		{# Validation #}
-		<button class="uk-button uk-button-secondary uk-button-small" type="submit">Valider</button>
-		<p class="form-link">
-			Déjà inscrit(e) ?<br>
-			<a href="{{ path('app_login') }}">Connectez-vous !</a>
-		</p>
-		{{ form_end(registrationForm) }}
-	</center>
+			{# CSRF #}
+			<input
+			type="hidden" name="_csrf_token" value="{{ csrf_token('register') }}">
+			{# Validation #}
+			<button class="uk-button uk-button-secondary uk-button-small" type="submit">Valider</button>
+			<p class="form-link">
+				Déjà inscrit(e) ?<br>
+				<a href="{{ path('app_login') }}">Connectez-vous !</a>
+			</p>
+			{{ form_end(registrationForm) }}
+		</center>
+		<img id="banniere3" src="{{ asset('uploads/images/AssetTemplate/hiver.png') }}"/>
+	</div>
 {% endblock %}
