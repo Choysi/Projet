@@ -3,7 +3,7 @@
 {% block body %}
 	{% if articles is not empty %}
 		{% for article in articles %}
-			<article class="uk-article">
+			<article id="page-article" class="uk-article">
 
 				<h1 class="uk-article-title">
 					<a class="uk-link-reset" href="">{{ article.title }}</a>
