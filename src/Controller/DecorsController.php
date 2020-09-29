@@ -9,10 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DecorsController extends AbstractController
 {
   /**
-     * @Route("/décors", name="décors")
+     * @Route("/decors", name="decors")
      */
     public function index()
     {
-        return $this->render('Décors/décors.html.twig');
+        return $this->render('Decors/decors.html.twig');
     }
 }

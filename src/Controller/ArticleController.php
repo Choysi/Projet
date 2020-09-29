@@ -65,7 +65,7 @@ class ArticleController extends AbstractController
             $em->flush();
         }
 
-        return $this->redirectToRoute('article_show', ['slug' => $article->getSlug()]);
+        return $this->redirectToRoute('article_show', ['id' => $article->getId()]);
     }
 
     /**

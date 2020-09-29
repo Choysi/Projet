@@ -66,15 +66,15 @@
 
 	<div class="columns">
 		<div class="column">
-			{% if is_granted('ROLE_ADMIN') %}
+			{% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER')%}
 				{{ render(controller('App\\Controller\\ArticleController::commentForm', {'article': article.id})) }}
 			{% else %}
 				<div class="notification is-primary">
 					{{ 'article.not_authenticate'|trans }}
 					<br>
-					<a href="{{ path('login') }}">{{ 'article.login'|trans }}</a>
+					<a href="{{ path('app_login') }}">{{ 'article.login'|trans }}</a>
 					{{ 'generic.or'|trans }}
-					<a href="{{ path('registration') }}">{{ 'article.signin'|trans }}</a>
+					<a href="{{ path('app_register') }}">{{ 'article.signin'|trans }}</a>
 				</div>
 			{% endif %}
 		</div>
