@@ -76,6 +76,11 @@ class Product
      */
     private $quantity;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Commande::class, inversedBy="product")
+     */
+    private $commande;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -245,5 +250,17 @@ class Product
     public function isEnabled()
     {
         return $this->getEnabled();
+    }
+
+    public function getCommande(): ?Commande
+    {
+        return $this->commande;
+    }
+
+    public function setCommande(?Commande $commande): self
+    {
+        $this->commande = $commande;
+
+        return $this;
     }
 }

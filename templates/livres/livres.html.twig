@@ -2,7 +2,66 @@
 
 {% block title %}Les livres
 {% endblock %}
-
 {% block body %}
-    LIVRES
-{% endblock %}
+	<section id="livre">
+		<center>
+			<div class="uk-h1">Livres</div>
+		</center>
+		<center>
+			<div class="gallery">
+				<div id="text-presentation">
+					<div class="uk-h2">Rencontres à l’heure du boeuf</div>
+					<p>Mon livre, paru en octobre 2007. Bestiaire des créatures fabuleuses du Japon.</p>
+					<div class="uk-container">
+						<div class="livre-item">
+							<img class="livre-image" src="{{ asset('uploads/images/Livres/HeureDuBoeuf.png') }}" alt="Rencontres à l'heure du boeuf">
+						</div>
+					</div>
+				</div>
+
+				<div id="text-presentation">
+					<div class="uk-h2">Recueils de scénarii pour le jeu de rôle La Légende des cinq Anneaux</div>
+					<p>Réalisés à titre associatif, avec d’autres artistes, nous avons fourni plusieurs dessins de personnages, décors ou objets pour illustrer les différents articles.</p>
+					<div class="uk-h2">Les parchemins secrets de Rokugan</div>
+					<p>Les Parchemins secrets de Rokugan, Rouleau premier, Gempuku (Décembre 2006)</p>
+					<div class="uk-container">
+						<div class="livre-item">
+							<a href="https://www.voixrokugan.org/download/gempukku-recueil/"><img class="livre-image" src="{{ asset('uploads/images/Livres/LesParcheminsSecretsDeRokugan.jpg') }}" alt="Les parchemins secrets de Rokugan"></a>
+						</div>
+					</div>
+				</div>
+
+
+				<div id="text-presentation">
+					<div class="uk-h2">Les parchemins secrets de Rokugan</div>
+					<p>Les Parchemins secrets de Rokugan, Rouleau second, Matsuri (Juin 2008)</p>
+					<div class="uk-container">
+						<div class="livre-item">
+							<a href="https://www.voixrokugan.org/download/matsuri-recueil/"><img class="livre-image" src="{{ asset('uploads/images/Livres/LesParcheminsSecretsDeRokugan2.jpg') }}" alt="Les parchemins secrets de Rokugan2"></a>
+						</div>
+					</div>
+				</div>
+
+				<div id="text-presentation">
+					<div class="uk-h2">Les parchemins secrets de Rokugan</div>
+					<p>Les Parchemins secrets de Rokugan, Rouleau troisième, Chikara no za (Septembre 2009)</p>
+					<div class="uk-container">
+						<div class="livre-item">
+							<a href="https://www.voixrokugan.org/download/chikara-no-za-recueil/"><img class="livre-image" src="{{ asset('uploads/images/Livres/LesParcheminsSecretsDeRokugan3.jpg') }}" alt="Les parchemins secrets de Rokugan3"></a>
+						</div>
+					</div>
+				</div>
+
+				<div id="text-presentation">
+					<div class="uk-h2">L’Asie-Monde, Chronique sur l’Asie et le Pacifique. 2002-2011</div>
+					<p>Après la parution de mon livre, M. Jean-François Sabouret m’avait contacté pour écrire un article pour le site internet du Réseau Asie et Pacifique (CNRS/FMSH). Ces articles ont par la suite été publiés dans l’ouvrage ci-dessous.
+																								Mon article,  « L’année du Bœuf de Terre, le temps dans l’ancien Japon » est consultable en cliquant sur l'image ci-dessous :</p>
+					<div class="uk-container">
+						<div class="livre-item">
+							<a href="https://books.openedition.org/editionscnrs/12241"><img class="livre-image" src="{{ asset('uploads/images/Livres/AsieMonde.jpg') }}" alt="L'Asie-Monde"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endblock %}
