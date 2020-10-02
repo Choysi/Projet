@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Articles culturels
+{% endblock %}
 {% block body %}
 	{% if articles is not empty %}
 		{% for article in articles %}
@@ -28,31 +29,31 @@
 			</article>
 
 			{# <div class="card mt-30">
-			                <header class="card-header">
-			                    <h1 class="card-header-title">
-			                        {{ article.title }}
-			                    </h1>
-			                </header>
-			                <div class="card-content">
-			                    <div class="content">
-			                        {{ article.content|raw }}
-			                        <br>
-			                        <time datetime="2016-1-1">{{ article.createAt|date("d/m/Y") }}</time>
-			                        {{ 'Ecrit par'|trans }} {{ article.author.username}}
-			                    </div>
-			                </div>
-			                <footer class="card-footer">
-			                    <a href="{{ path('article_show', {'id': article.id}) }}" class="card-footer-item is-primary">
-			                        {{ 'Lire plus...' }}
-			                    </a>
-			                </footer>
-			            </div> #}
+						                <header class="card-header">
+						                    <h1 class="card-header-title">
+						                        {{ article.title }}
+						                    </h1>
+						                </header>
+						                <div class="card-content">
+						                    <div class="content">
+						                        {{ article.content|raw }}
+						                        <br>
+						                        <time datetime="2016-1-1">{{ article.createAt|date("d/m/Y") }}</time>
+						                        {{ 'Ecrit par'|trans }} {{ article.author.username}}
+						                    </div>
+						                </div>
+						                <footer class="card-footer">
+						                    <a href="{{ path('article_show', {'id': article.id}) }}" class="card-footer-item is-primary">
+						                        {{ 'Lire plus...' }}
+						                    </a>
+						                </footer>
+						            </div> #}
 		{% endfor %}
 
 		{# {% include 'paginator/paginator.html.twig' %} #}
-	{% else %}
+		{% else %}
 		{# <div class="has-text-centered">
-			<h1 class="title is-4">{{ 'home.no_article'|trans }}</h1>
-		</div> #}
+					<h1 class="title is-4">{{ 'home.no_article'|trans }}</h1>
+				</div> #}
 	{% endif %}
 {% endblock %}

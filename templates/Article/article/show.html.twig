@@ -1,4 +1,6 @@
 {% extends 'base.html.twig' %}
+{% block title %}Article culturel
+{% endblock %}
 
 {% block body %}
 	{# {% if article.image is not null %}
@@ -61,7 +63,7 @@
 				{{ render(controller('App\\Controller\\ArticleController::commentForm', {'article': article.id})) }}
 			{% else %}
 				<div class="notification is-primary">
-					{{ 'Identifiez-vous'|trans }}
+					{{ 'Identifiez-vous pour commenter :'|trans }}
 					<br>
 					<a href="{{ path('app_login') }}">{{ 'Connexion'|trans }}</a>
 					{{ 'ou'|trans }}
