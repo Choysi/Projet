@@ -58,13 +58,14 @@ html {
     height: 700px;
 }
 
-#banniere2 {
+/* #banniere2 {
     position: absolute;
-}
+} */
 
 #banniere3 {
-    position: absolute;
-}
+    margin-left: auto;
+    margin-right: auto;
+} 
 
 .connection {
     font-family: 'Amatic SC', cursive;
@@ -128,6 +129,10 @@ html {
 #text-presentation {
     text-align: justify;
     margin: 20px;
+}
+
+address, dl, fieldset, figure, ol, p, pre, ul {
+    margin: 0 20px 20px 0;
 }
 
 /* gallery */
