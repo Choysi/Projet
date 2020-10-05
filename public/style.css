@@ -47,6 +47,11 @@ html {
 .figure {
     margin: 0;
 }
+#register-form li {
+    justify-content: center;
+    list-style:none;
+    color:red;
+}
 
 .tableauBois {
     background-image: url('uploads/images/AssetTemplate/tableau bois.png') cover/center no-repeat;

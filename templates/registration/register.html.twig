@@ -10,6 +10,7 @@
 	<div id="register-form">
 		<center>
 			{{ form_start(registrationForm) }}
+			{{ form_errors(registrationForm.email)}}
 			{# Titre formulaire #}
 			<h1 class="inscription">Inscription</h1>
 			{# Prénom #}

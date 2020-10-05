@@ -20,7 +20,7 @@
 				<th>DATE D'INSCRIPTION</th>
 				{% if is_granted('ROLE_ADMIN') %}
 				<th>MODIFIER</th>
-				<th>SUPPRIMER</th>
+				{# <th>SUPPRIMER</th> #}
 				{% endif %}
 			</tr>
 		</thead>
@@ -28,7 +28,7 @@
 			{% for user in users %}
 				<tr>
 					<td>
-						<a href="{{ path('user_show', {id: user.id}) }}">{{ user }}</a>
+						{{ user }}
 					</td>
 					<td>{{ user.email }}</td>
 					<td>{{ user.registerdate | date('d/m/Y') }}</td>
@@ -36,9 +36,9 @@
 						<td>
 							<a href="{{ path('user_edit', {id: user.id}) }}">Modifier</a>
 						</td>
-						<td>
+						{# <td>
 							<a href="{{ path('user_delete', {id: user.id}) }}">Supprimer</a>
-						</td>
+						</td> #}
 					{% endif %}
 				</tr>
 			{% endfor %}

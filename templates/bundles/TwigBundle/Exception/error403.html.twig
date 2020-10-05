@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}Accès interdit
+{% endblock %}
+
+{% block body %}
+	<center>
+		<div class="uk-h1">
+			<h1>Vous n'avez pas le droit !</h1>
+            <a href="{{path('home')}}"> Retourner sur la page d'accueil</a>
+			<img src="{{ asset('uploads/images/AssetTemplate/masque.png') }}"/>
+		</div>
+	</center>
+{% endblock %}
