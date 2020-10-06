@@ -27,6 +27,11 @@ html {
     margin-top: 6em;
 }
 
+#commander {
+    float: right;
+    margin-right: 8em;
+}
+
 .miyajima {
     justify-content: center;
     display: flex;
