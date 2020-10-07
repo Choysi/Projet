@@ -25,10 +25,10 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'Acceptez les conditions d\'utilisations, svp !',
+                        'message' => 'Acceptez les conditions d\'utilisation, svp !',
                     ]),
                 ],
-                'label'=>'Acceptez les conditions d\'utilisations'
+                'label'=>'Acceptez les conditions d\'utilisation'
             ])
             ->add('pseudo', TextType::class)
             ->add('plainPassword', RepeatedType::class, [

@@ -9,15 +9,15 @@
     <div class="media-content">
 
         <div class="uk-inline">
-            {{ form_label(form.content, 'Commentez'|trans, {'label_attr': {'class': 'label'}}) }}
+            {{ form_label(form.content, 'Commentez', {'label_attr': {'class': 'label'}}) }}
             <p class="control">
-                {{ form_widget(form.content, {'attr': {'class': 'uk-input', 'placeholder': 'Commentez...'|trans}}) }}
+                {{ form_widget(form.content, {'attr': {'class': 'uk-input', 'placeholder': 'Commentez...'}}) }}
             </p>
         </div>
         <div class="field">
             <p class="control">
                 {{ form_rest(form) }}
-                <button type="submit" class="uk-button uk-button-secondary uk-button-small">{{ 'Créer un commentaire'|trans }}</button>
+                <button type="submit" class="uk-button uk-button-secondary uk-button-small">{{ 'Créer un commentaire' }}</button>
             </p>
         </div>
     </div>
