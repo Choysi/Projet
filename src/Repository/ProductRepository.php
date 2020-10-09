@@ -19,15 +19,25 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-    public function allByCatergory($id)
+    /**
+     * La fonction appelle tout les produits par catégorie
+     *
+     * @param int $id
+     */
+    public function allByCategory($id)
     {
+        // Je créer ma requete ('p') qui fait référence à l'entité Produit
         return $this->createQueryBuilder('p')
+        // Je cherche tout les produits qui ont la catégorie de la valeur correspondant à 'val'
         ->andWhere('p.categorieOeuvre = :val')
+        // Je vais donner à 'val' la valeur de $id
         ->setParameter('val', $id)
+        //Je créer une instance de l'objet Query
         ->getQuery()
+        // J'execute la requête
         ->getResult()
         ;
-    }
+    } 
 
     public function countAllProduct()
     {

@@ -26,7 +26,7 @@ class ProductController extends AbstractController
     public function showByCategory(ProductRepository $productRepository,Product $product)
     {
         return $this->render('product/index.html.twig', [
-            'products' => $productRepository->allByCatergory($product)
+            'products' => $productRepository->allByCategory($product)
         ]);
     }
 
